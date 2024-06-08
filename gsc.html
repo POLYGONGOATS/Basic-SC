@@ -8,15 +8,17 @@
 <body>
     <h1>Step Counter</h1>
     <p>Today's Steps: <span id="stepCount">0</span></p>
-    <button onclick="incrementStep()">Increment Step Count</button>
+    <button id="incrementButton">Increment Step Count</button>
 
     <script>
         let stepCount = 0;
+        const stepCountElement = document.getElementById('stepCount');
 
-        function incrementStep() {
+        document.getElementById('incrementButton').addEventListener('click', function() {
             stepCount++;
-            document.getElementById('stepCount').textContent = stepCount;
-        }
+            stepCountElement.textContent = stepCount;
+        });
     </script>
 </body>
 </html>
+
